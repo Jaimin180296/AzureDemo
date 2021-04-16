@@ -17,12 +17,15 @@ public class MavenTest {
 
     public WebDriver driver;
     public WebDriverWait wait;
-    String AUTOMATE_USERNAME = System.getenv("BROWSERSTACK_USERNAME");
-    String AUTOMATE_ACCESS_KEY = System.getenv("BROWSERSTACK_ACCESS_KEY");
+
+    static String AUTOMATE_USERNAME = System.getenv("BROWSERSTACK_USERNAME");
+    static String AUTOMATE_ACCESS_KEY = System.getenv("BROWSERSTACK_ACCESS_KEY");
     public final String URL = "https://" + AUTOMATE_USERNAME + ":" + AUTOMATE_ACCESS_KEY + "@hub-cloud.browserstack.com/wd/hub";
 
     @BeforeClass
     public void setup() throws MalformedURLException {
+        System.out.println("Key------->"+AUTOMATE_USERNAME);
+        System.out.println("Acesskey------->"+AUTOMATE_ACCESS_KEY);
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("os", "OS X");
         caps.setCapability("os_version", "Catalina");
@@ -40,25 +43,25 @@ public class MavenTest {
     @Test()
     public void test() throws InterruptedException {
         driver.navigate().to("https://www.google.com/");
-          WebElement element = driver.findElement(By.name("q"));
+        WebElement element = driver.findElement(By.name("q"));
         element.sendKeys("BrowserStack");
         element.submit();
         // Setting the status of test as 'passed' or 'failed' based on the condition; if title of the web page contains 'BrowserStack'
         WebDriverWait wait = new WebDriverWait(driver, 5);
         try {
             wait.until(ExpectedConditions.titleContains("BrowserStack"));
-            markTestStatus("passed","Yaay title contains 'BrowserStack'!",driver);
-        }
-        catch(Exception e) {
-            markTestStatus("failed","Naay title does not contain 'BrowserStack'!",driver);
+            markTestStatus("passed", "Yaay title contains 'BrowserStack'!", driver);
+        } catch (Exception e) {
+            markTestStatus("failed", "Naay title does not contain 'BrowserStack'!", driver);
         }
         System.out.println(driver.getTitle());
         driver.quit();
     }
+
     // This method accepts the status, reason and WebDriver instance and marks the test on BrowserStack
     public static void markTestStatus(String status, String reason, WebDriver driver) {
-        JavascriptExecutor jse = (JavascriptExecutor)driver;
-        jse.executeScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\": \""+status+"\", \"reason\": \""+reason+"\"}}");
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\": \"" + status + "\", \"reason\": \"" + reason + "\"}}");
     }
 
 
