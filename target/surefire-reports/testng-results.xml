@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-04-16T16:17:57 IST" name="Practice Suite" finished-at="2021-04-16T16:18:13 IST" duration-ms="16547">
+    <groups>
+    </groups>
+    <test started-at="2021-04-16T16:17:57 IST" name="Test Basics 1" finished-at="2021-04-16T16:18:13 IST" duration-ms="16547">
+      <class name="AzureDemo.MavenTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:AzureDemo.MavenTest@382db087]" started-at="2021-04-16T16:17:57 IST" name="setup" finished-at="2021-04-16T16:18:05 IST" duration-ms="8201" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="test()[pri:0, instance:AzureDemo.MavenTest@382db087]" started-at="2021-04-16T16:18:05 IST" name="test" finished-at="2021-04-16T16:18:13 IST" duration-ms="8324" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test -->
+        <test-method is-config="true" signature="stop()[pri:0, instance:AzureDemo.MavenTest@382db087]" started-at="2021-04-16T16:18:13 IST" name="stop" finished-at="2021-04-16T16:18:13 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stop -->
+      </class> <!-- AzureDemo.MavenTest -->
+    </test> <!-- Test Basics 1 -->
+  </suite> <!-- Practice Suite -->
+</testng-results>
