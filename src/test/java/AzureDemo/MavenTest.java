@@ -17,8 +17,8 @@ public class MavenTest {
 
     public WebDriver driver;
     public WebDriverWait wait;
-    public final String AUTOMATE_USERNAME = "jaiminmehta3";
-    public final String AUTOMATE_ACCESS_KEY = "f2q1FMatZb3X88b19jQ6";
+    String AUTOMATE_USERNAME = System.getenv("BROWSERSTACK_USERNAME");
+    String AUTOMATE_ACCESS_KEY = System.getenv("BROWSERSTACK_ACCESS_KEY");
     public final String URL = "https://" + AUTOMATE_USERNAME + ":" + AUTOMATE_ACCESS_KEY + "@hub-cloud.browserstack.com/wd/hub";
 
     @BeforeClass
