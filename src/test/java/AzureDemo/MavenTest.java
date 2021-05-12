@@ -18,14 +18,16 @@ public class MavenTest {
     public WebDriver driver;
     public WebDriverWait wait;
 
-    String username = System.getenv("BROWSERSTACK_USERNAME");
-    String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
-    public final String URL = "https://" + username + ":" + accessKey+ "@hub-cloud.browserstack.com/wd/hub";
+  // String username = System.getenv("BROWSERSTACK_USERNAME");
+  //  String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
+    String username = "jaiminmehta3";
+    String accessKey ="f2q1FMatZb3X88b19jQ6";
+    public final String URL = "https://" + username + ":" + accessKey + "@hub-cloud.browserstack.com/wd/hub";
 
     @BeforeClass
     public void setup() throws MalformedURLException {
-        System.out.println("Key------->"+username);
-        System.out.println("Acesskey------->"+accessKey);
+        System.out.println("Key------->" + username);
+        System.out.println("Acesskey------->" + accessKey);
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("os", "OS X");
         caps.setCapability("os_version", "Catalina");
